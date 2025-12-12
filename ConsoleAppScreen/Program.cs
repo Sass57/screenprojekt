@@ -11,7 +11,7 @@ namespace ConsoleAppScreen
             //Például egy kitöltött téglalap rajzolása a képernyőn
             Screen.FillRectangle(40, 5, 20, 10);
             // Például egy vonal rajzolása a képernyőn
-            //Screen.DrawLine(10, 20, 60, 20);
+            Screen.DrawLine(10, 20, 60, 20);
             // Például szöveg középre igazítása
             string centeredText = Screen.AlignTextCenter("Középre igazított szöveg", 50);
             Console.WriteLine(centeredText);
