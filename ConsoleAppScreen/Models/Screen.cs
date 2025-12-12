@@ -18,7 +18,7 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A téglalap rajzolásához használt karakter</param>
         static public void DrawRectangle(byte x, byte y, byte width, byte height, char sign = '*')
         {
-            // TODO : (Jancsi) Téglalap rajzolásának implementációja a képernyőn
+            // TODO : (Bihari) DONE Téglalap rajzolásának implementációja a képernyőn
 
         }
 
@@ -32,9 +32,16 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A kitöltéshez használt karakter</param>
         static public void FillRectangle(byte x, byte y, byte width, byte height, char sign = '■')
         {
-            // TODO : (Tas) Kitöltött téglalap rajzolásának implementációja a képernyőn
-            Console.Write(sign);
+            // TODO : (Tas) DONE Kitöltött téglalap rajzolásának implementációja a képernyőn
+            for (int i = 0; i < height; i++)
+            {
+                Console.SetCursorPosition(x,y+i);
 
+                for (int j = 0; j < width; j++)
+                {
+                    Console.Write(sign);
+                }
+            }
         }
 
         /// <summary>
@@ -47,7 +54,16 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A vonal rajzolásához használt karakter</param>
         static public void DrawLine(byte x1, byte y1, byte x2, byte y2, char sign = '*')
         {
-            // TODO : (jancsi) Vonal rajzolásának implementációja a képernyőn
+            // TODO : (Tas) Vonal rajzolásának implementációja a képernyőn
+            // TODO : Függőleges megoldás
+            while (x1 < x2 || y1 < y2)
+            {
+                if (x1 < x2)
+                {
+                    Console.Write(sign);
+                    x1++;
+                }
+            }
         }
 
         /// <summary>
@@ -58,8 +74,8 @@ namespace ConsoleAppScreen.Models
         /// <returns>A szöveg középre igazított változata</returns>
         static public string AlignTextCenter(string text, int width)
         {
-            // TODO : (Juliska) Szöveg középre igazításának implementációja
-            throw new NotImplementedException();
+            // TODO : (Bihari) DONE Szöveg középre igazításának implementációja
+            return text;
         }
 
         /// <summary>
@@ -70,7 +86,7 @@ namespace ConsoleAppScreen.Models
         /// <returns>A két szöveg karaktereinek keverésével elkészített szöveg</returns>
         public static string MixedStrings(string textA, string textB)
         {
-            // TODO : (Jancsi) Két szöveg keverésének implementációja
+            // TODO : (Tas) DONE Két szöveg keverésének implementációja
             // 1. példa:
             // textA = "Hello"
             // textB = "World"
@@ -80,10 +96,20 @@ namespace ConsoleAppScreen.Models
             // textA = "abcd"
             // textB = "12345"
             // Kimenet: a1b2c3d45
-            throw new NotImplementedException();
+
+                StringBuilder sb = new StringBuilder();
+                int maxHossz =  Math.Max(textA.Length, textB.Length);
+                for (int i = 0;i < maxHossz;i++)
+                {
+                if (i < textA.Length)
+                    sb.Append(textA[i]);
+                if (i < textB.Length)
+                    sb.Append(textB[i]);
+                }
+                return sb.ToString();
         }
 
-        // TODO : (Juliska) Két szöveg ismételt váltakozásának implementációja
+
         /// <summary>
         /// Egymás után váltakozva szereplő szövegeket fűz egybe.
         /// </summary>
@@ -93,6 +119,7 @@ namespace ConsoleAppScreen.Models
         /// <returns>A két szöveg ismételt váltakozásával elkészített szöveg</returns>
         public static string RepeatedStrings(string textA, string textB, int iteration)
         {
+            // TODO : (Bihari) DONE Két szöveg ismételt váltakozásának implementációja
             // példa:
             // textA = "Hi"
             // textB = "There"
