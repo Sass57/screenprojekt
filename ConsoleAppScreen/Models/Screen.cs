@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace ConsoleAppScreen.Models
@@ -18,7 +19,19 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A téglalap rajzolásához használt karakter</param>
         static public void DrawRectangle(byte x, byte y, byte width, byte height, char sign = '*')
         {
-            // TODO : (Jancsi) Téglalap rajzolásának implementációja a képernyőn
+            // TODO : (Bihari) Téglalap rajzolásának implementációja a képernyőn
+            for (int sor = 0; sor < height; sor++)
+            {
+                Console.SetCursorPosition(x, y + sor);
+
+                for (int oszlop = 0; oszlop < width; oszlop++)
+                {
+                    if (sor == 0 || sor == height - 1 || oszlop == 0 || oszlop == width - 1)
+                        Console.Write(sign);
+                    else
+                        Console.Write(' '); 
+                }
+            }
 
         }
 
@@ -48,6 +61,7 @@ namespace ConsoleAppScreen.Models
         static public void DrawLine(byte x1, byte y1, byte x2, byte y2, char sign = '*')
         {
             // TODO : (jancsi) Vonal rajzolásának implementációja a képernyőn
+            
         }
 
         /// <summary>
@@ -58,8 +72,7 @@ namespace ConsoleAppScreen.Models
         /// <returns>A szöveg középre igazított változata</returns>
         static public string AlignTextCenter(string text, int width)
         {
-            // TODO : (Juliska) Szöveg középre igazításának implementációja
-            throw new NotImplementedException();
+            return text.PadLeft((width + text.Length) / 2).PadRight(width);
         }
 
         /// <summary>
@@ -93,13 +106,18 @@ namespace ConsoleAppScreen.Models
         /// <returns>A két szöveg ismételt váltakozásával elkészített szöveg</returns>
         public static string RepeatedStrings(string textA, string textB, int iteration)
         {
+         
             // példa:
             // textA = "Hi"
             // textB = "There"
             // iteration = 3
             // Kimenet: HiThereHiThereHiThere
-
-            throw new NotImplementedException();
+            string eredmeny = "";
+            for (int i = 0; i <= iteration; i++)
+            {
+              eredmeny +=  textA + textB;
+            }
+            return eredmeny;
         }
     }
 }
