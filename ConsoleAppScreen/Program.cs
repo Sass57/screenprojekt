@@ -22,18 +22,11 @@ namespace ConsoleAppScreen
             string repeatedText = Screen.RepeatedStrings("AB", "12", 5);
             Console.WriteLine(repeatedText);
 
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
+
+            for (int i = 0; i < 13; i++)
+            {
+                Console.WriteLine("");
+            }
         }
     }
 }
