@@ -19,7 +19,7 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A téglalap rajzolásához használt karakter</param>
         static public void DrawRectangle(byte x, byte y, byte width, byte height, char sign = '*')
         {
-            // TODO : (Bihari) Téglalap rajzolásának implementációja a képernyőn
+            // TODO : (Bihari) DONE Téglalap rajzolásának implementációja a képernyőn
             for (int sor = 0; sor < height; sor++)
             {
                 Console.SetCursorPosition(x, y + sor);
@@ -67,8 +67,6 @@ namespace ConsoleAppScreen.Models
         /// <param name="sign">A vonal rajzolásához használt karakter</param>
         static public void DrawLine(byte x1, byte y1, byte x2, byte y2, char sign = '*')
         {
-            // TODO : (jancsi) Vonal rajzolásának implementációja a képernyőn
-            
             // TODO : (Tas) Vonal rajzolásának implementációja a képernyőn
             // TODO : Függőleges megoldás
             while (x1 < x2 || y1 < y2)
